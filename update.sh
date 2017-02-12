@@ -19,7 +19,7 @@ echo "Fetching and building distribution $VERSION..."
 TEMP=`mktemp -d /$TMPDIR/distribution.XXXXXX`
 
 git clone -b $VERSION https://github.com/docker/distribution.git $TEMP
-cp Dockerfile.distribution $TEMP/Dockerfile
+cp ./distribution/Dockerfile $TEMP/Dockerfile
 mkdir registry
 cat  $TEMP/Dockerfile
 docker build -t distribution-builder $TEMP

@@ -27,7 +27,7 @@ Steps:
 
 1. Package clone [docker/distribution pacakge](https://github.com/docker/distribution) from github
 2. Replace original [Dockerfile](https://github.com/docker/distribution/blob/master/Dockerfile) by this 
-[Dockerfile.distribution](https://github.com/Budry/docker-registry-arm/blob/master/Dockerfile.distribution) (Dockerfiles 
+[Dockerfile.distribution](https://github.com/Budry/docker-registry-arm/blob/master/distribution/Dockerfile) (Dockerfiles 
 should be same, only FROM directive is different)
 3. Build [docker/distribution registry](https://github.com/docker/distribution/tree/master/registry) with `make`
 4. Build a new docker registry by steps from [official repository](https://github.com/docker/distribution-library-image)
