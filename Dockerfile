@@ -1,6 +1,6 @@
 # Build a minimal distribution container
 
-FROM scaleway/ubuntu:14.04
+FROM resin/rpi-raspbian:jessie
 
 RUN apt-get update && \
     apt-get install -y ca-certificates librados2 apache2-utils && \
@@ -12,4 +12,4 @@ COPY ./registry/config-example.yml /etc/docker/registry/config.yml
 VOLUME ["/var/lib/registry"]
 EXPOSE 5000
 ENTRYPOINT ["/bin/registry"]
-CMD ["/etc/docker/registry/config.yml"]
+CMD ["server", "/etc/docker/registry/config.yml"]
