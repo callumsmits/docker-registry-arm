@@ -48,8 +48,9 @@ I trying update build of this package as soon as possible for each docker regist
 
 ### Custom build
 
-Or you can use custom build on your ARM (Raspberry PI) device. **IMPORTANT NOTE: Build must be only on ARM device. On
-x86/x64 CPU not work!**
+Or you can use custom build on your ARM (Raspberry PI) device. 
+
+**IMPORTANT NOTE: Build must be only on ARM device. On x86/x64 CPU not work!**
 
 ```shell
 $ git clone git@github.com:Budry/docker-registry-arm.git
