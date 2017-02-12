@@ -20,6 +20,7 @@ TEMP=`mktemp -d /$TMPDIR/distribution.XXXXXX`
 
 git clone -b $VERSION https://github.com/docker/distribution.git $TEMP
 cp Dockerfile.distribution $TEMP/Dockerfile
+mkdir registry
 cat  $TEMP/Dockerfile
 docker build -t distribution-builder $TEMP
 
@@ -27,8 +28,8 @@ docker build -t distribution-builder $TEMP
 ID=$(docker create distribution-builder)
 
 # Update the local binary and config.
-docker cp $ID:/go/bin/registry registry
-docker cp $ID:/go/src/github.com/docker/distribution/cmd/registry/config-example.yml registry
+docker cp $ID:/go/bin/registry ./registry/
+docker cp $ID:/go/src/github.com/docker/distribution/cmd/registry/config-example.yml ./registry/
 
 # Cleanup.
 docker rm -f $ID
