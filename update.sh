@@ -20,7 +20,8 @@ TEMP=`mktemp -d /$TMPDIR/distribution.XXXXXX`
 
 git clone -b $VERSION https://github.com/docker/distribution.git $TEMP
 cp ./distribution/Dockerfile $TEMP/Dockerfile
-mkdir registry
+rm ./registry -rf
+mkdir ./registry
 cat  $TEMP/Dockerfile
 docker build -t distribution-builder $TEMP
 
