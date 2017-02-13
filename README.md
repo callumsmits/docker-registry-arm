@@ -57,6 +57,15 @@ Or you can use custom build on your ARM (Raspberry PI) device.
 ```shell
 $ git clone git@github.com:Budry/docker-registry-arm.git
 $ cd docker-registry-arm
+$ sh build.sh my/registry
+$ docker run -d -p 5000:5000 --restart always my/registry
+```
+
+or 
+
+```shell
+$ git clone git@github.com:Budry/docker-registry-arm.git
+$ cd docker-registry-arm
 $ sh update.sh master
 $ docker build -t my/registry .
 $ docker run -d -p 5000:5000 --restart always my/registry
