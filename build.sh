@@ -5,7 +5,7 @@ if [ $# -eq 0 ] ; then
         exit
 fi
 
-IMAGE=$0
+IMAGE=$1
 
 echo "Run update.sh master"
 sh update.sh master
