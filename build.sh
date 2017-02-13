@@ -7,6 +7,8 @@ fi
 
 IMAGE=$1
 
+echo "Image ${IMAGE}"
+
 echo "Run update.sh master"
 sh update.sh master
 
