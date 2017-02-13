@@ -2,7 +2,7 @@
 
 Docker registry build for Raspberry PI 2 and 3 (maybe for others ARM devices)
 
-This package is based on [old and unmaintained project](https://github.com/vdavy/distribution-library-image).
+This package is based on official [docker registry](https://github.com/docker/distribution-library-image/)
 
 ## Content
 
