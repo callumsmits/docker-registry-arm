@@ -1,16 +1,26 @@
 #!/usr/bin/env sh
 
-if [ $# -eq 0 ] ; then
-        echo "Usage: ./build.sh <image name>"
-        exit
+help() {
+  echo "Usage: ${0} <image> <tag>"
+}
+
+if [ -z "$1" ] ; then
+        echo "Missing image name"
+        help
+        exit 1
 fi
 
-IMAGE=$1
+if [ -z "$2" ] ; then
+        echo "Missing image tag"
+        help
+        exit 1
+fi
 
-echo "Image ${IMAGE}"
+echo "Run update.sh ${2}"
+sh update.sh $2
 
-echo "Run update.sh master"
-sh update.sh master
+echo "Run docker build -t ${2}:${1} ."
+docker build -t ${1}:${2} .
 
-echo "Run docker build -t ${IMAGE} ."
-docker build -t ${IMAGE} .
+echo "Update image on docker HUB"
+docker push ${1}:${2}
