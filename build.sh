@@ -16,8 +16,10 @@ if [ -z "$2" ] ; then
         exit 1
 fi
 
+BASEDIR="$(dirname $0)"
+
 echo "Run update.sh ${2}"
-sh update.sh $2
+sh ${BASEDIR}/update.sh $2
 
 echo "Run docker build -t ${2}:${1} ."
 docker build -t ${1}:${2} .
