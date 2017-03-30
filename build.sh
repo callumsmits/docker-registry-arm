@@ -21,8 +21,8 @@ BASEDIR="$(dirname $0)"
 echo "Run update.sh ${2}"
 sh ${BASEDIR}/update.sh $2
 
-echo "Run docker build -t ${2}:${1} ."
-docker build -t ${1}:${2} .
+echo "Run docker build -t ${1}:${2} ${BASEDIR}"
+docker build -t ${1}:${2} ${BASEDIR}
 
 echo "Update image on docker HUB"
 docker push ${1}:${2}
