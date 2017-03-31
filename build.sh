@@ -25,4 +25,4 @@ echo "Run docker build -t ${1}:${2} ${BASEDIR}"
 docker build -t ${1}:${2} ${BASEDIR}
 
 echo "Update image on docker HUB"
-docker push docker.io:${1}:${2}
+docker push docker.io/${1}:${2}
