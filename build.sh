@@ -34,3 +34,4 @@ docker build -t ${IMAGE_NAME}:${TAG} -t ${IMAGE_NAME}:latest ${BASEDIR}
 
 echo "Update image on docker HUB"
 docker push docker.io/${IMAGE_NAME}:${TAG}
+docker push docker.io/${IMAGE_NAME}:latest
