@@ -1,4 +1,4 @@
-FROM scaleway/golang:armhf-latest
+FROM arm32v7/golang
 
 ENV DISTRIBUTION_DIR /go/src/github.com/docker/distribution
 ENV DOCKER_BUILDTAGS include_oss include_gcs
