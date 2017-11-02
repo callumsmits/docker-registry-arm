@@ -2,11 +2,6 @@
 
 set -e
 
-if [ $# -eq 0 ] ; then
-	echo "Usage: ./update.sh <docker/distribution tag or branch>"
-	exit
-fi
-
 VERSION=$(cat TAG)
 TMPDIR=/tmp
 
