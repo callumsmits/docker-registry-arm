@@ -7,7 +7,7 @@ if [ $# -eq 0 ] ; then
 	exit
 fi
 
-VERSION=$1
+VERSION=$(cat TAG)
 TMPDIR=/tmp
 
 # cd to the current directory so the script can be run from anywhere.
