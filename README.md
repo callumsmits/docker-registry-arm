@@ -57,21 +57,22 @@ Or you can use custom build on your ARM (Raspberry PI) device.
 ```shell
 $ git clone git@github.com:Budry/docker-registry-arm.git
 $ cd docker-registry-arm
-$ sh build.sh my/registry
+$ sh build.sh -t my/registry
 $ docker run -d -p 5000:5000 --restart always my/registry
 ```
+
+This will use the reigstry version specified in the `TAG` file.
 
 or 
 
 ```shell
 $ git clone git@github.com:Budry/docker-registry-arm.git
 $ cd docker-registry-arm
-$ sh update.sh master
-$ docker build -t my/registry .
+$ sh build.sh -t my/registry master
 $ docker run -d -p 5000:5000 --restart always my/registry
 ```
 
-In this case you can specific docker version by first argument for `update.sh`. If you use `master` your registry will
+In this case you can specific docker version by last argument for `build.sh`. If you use `master` your registry will
 be actual
 
 ## Compatibility
